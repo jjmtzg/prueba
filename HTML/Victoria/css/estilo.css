@@ -1,0 +1,28 @@
+h1{
+	color:  #A0C3F8;
+	font-family: Verdana;
+}
+h2
+{
+	color:#A0C3F8;
+	font-family: Verdana;
+	font-size: 16px;
+}
+body
+{
+	background-color: #585445;
+	color: white;
+}
+.links
+{
+	color: #CF5246;
+}
+.caract
+{
+	color:#FFF86B;
+}
+.referencias
+{
+	border: #FF4E4E 3px solid;
+	margin: 3px;
+}

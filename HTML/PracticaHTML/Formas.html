@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Formulario</title>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.serializejson.js"></script>
+</head>
+
+<body>
+	<section>
+		<h1>Formulario</h1>
+		<form id="myform" action="" method="post">
+			<input type="text" placeholder="Nombre" id="texto" autocomplete="on" autofocus name="txtName" required/><br>
+			<input type="tel" maxlength="10" placeholder="Tel" name="txtTel" required/><br>
+			<input type="email" placeholder="E-mail" name="txtEmail" required/><br>
+			<input type="password" placeholder="Pass" name="txtPass" required/><br>
+			<input type="checkbox" name="chkAcept" required id="chkAcept">Acepto que me roben la info<br>
+			<button name="btnAcept" onClick="serializar()">Go!</button>
+		</form>
+		<script>
+			function serializar()
+			{
+				var text="";
+				text = $('#myform').serializeJSON();
+				if($('#chkAcept').is(':checked'))
+				{
+					if(text.txtName==""||text.txtEmail==""||text.txtPass==""||text.txtTel=="")
+						alert("Por favor, llene los campos obligatorios *");
+					else
+					{
+						console.log(text);
+						alert(text.txtName+"\n"+text.txtTel+"\n"+text.txtEmail+"\n");
+					}
+				}
+				else
+					alert("Selecciona");
+			}
+		</script>
+	</section>
+</body>
+</html>
